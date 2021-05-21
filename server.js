@@ -11,4 +11,4 @@ app.get('/react', (req, res) => {
     return res.send(reactData);
 });
 
-module.exports.handler = serverless(app);
+app.listen(3000, () => console.log('Local app listening on port 3000!'));
