@@ -1,4 +1,5 @@
 const express = require('express');
+const serverless = require('serverless-http');
 const app = express();
 const reactData = require('./data/react.json');
 
@@ -10,4 +11,4 @@ app.get('/react', (req, res) => {
     return res.send(reactData);
 });
 
-app.listen(process.eventNames.PORT || 8080);
+module.exports.handler = serverless(app);
